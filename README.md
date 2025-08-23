@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 🌌 Image Metadata Inspector
 
-First, run the development server:
+> 🔍 A sleek web app to **reveal the hidden story inside your images**.
+> Extract EXIF metadata, visualize geolocation on a map, and enjoy a dynamic, interactive UI.
+
+---
+
+## ✨ Features  
+
+✅ Upload images and instantly extract metadata <br>  
+✅ Inspect camera details, dimensions, and more <br>  
+✅ Visualize **geo-coordinates on an interactive map** <br>  
+✅ Interactive **shader orb** powered by WebGL <br>  
+✅ Beautiful **background animations** powered by **React Bits** <br>  
+✅ Responsive UI styled with TailwindCSS <br>  
+✅ One-click deployment with **Vercel**  
+
+---
+
+## 🛠️ Tech Stack
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=next,react,ts,tailwind,vercel,git,github" alt="Tech logos" />
+</p>  
+
+* ⚡ **Next.js 15** – Fast, modern React framework
+* ⚛️ **React Bits** – Smooth background animations & creative effects
+* 🎨 **TailwindCSS** – Utility-first styling
+* 🌐 **OGL (WebGL)** – Custom shader orb animation
+* 🗺️ **Leaflet.js** – Interactive maps for GPS data
+* ☁️ **Vercel** – Zero-config hosting & CI/CD
+
+---
+
+
+## 📂 Project Structure
+
+Here’s a high-level overview of the codebase:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Image-Metadata-Inspector/
+│── components/           # Reusable UI components
+│   ├── ExifUploader.tsx  # Upload & extract EXIF metadata
+│   ├── MapViewer.tsx     # Display GPS location on interactive map
+│   └── Orb/              # WebGL shader orb animation
+│
+│── pages/                # Next.js app routes
+│   ├── index.tsx         # Main app entry
+│   └── _app.tsx          # Global app wrapper
+│
+│── public/               # Static assets (icons, images, etc.)
+│── styles/               # Global styles (Tailwind base)
+│── package.json          # Project metadata & dependencies
+│── tsconfig.json         # TypeScript config
+│── next.config.js        # Next.js configuration
+│── README.md             # You’re here 🚀
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🖼️ Sample Images
 
-## Learn More
+Want to test the app with real-world examples?
+Use the excellent open-source **[EXIF Samples Repository](https://github.com/ianare/exif-samples)** maintained by @ianare.
 
-To learn more about Next.js, take a look at the following resources:
+It provides images with embedded EXIF metadata, perfect for experimenting with camera data, GPS tags, and more.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Getting Started
 
-## Deploy on Vercel
+Clone the repo and start hacking:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Clone repo
+git clone https://github.com/MiteDyson/Image-Metadata-Inspector.git
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Enter project folder
+cd Image-Metadata-Inspector
+
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+```
+
+👉 Now visit **[http://localhost:3000](http://localhost:3000)**
+
+---
+
+## 🚢 Deployment
+
+Deploy instantly with **Vercel**:
+
+1. Push your repo to GitHub
+2. Connect it to [Vercel](https://vercel.com/)
+3. Deploy with 1-click 🚀
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/MiteDyson/Image-Metadata-Inspector)
+
+---
+
+
+🌟 *If you like this project, don’t forget to star ⭐ the repo!*
+
+---
+
+
