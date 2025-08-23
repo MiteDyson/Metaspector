@@ -90,7 +90,8 @@ export default function MapViewer({ lat, lng, hasCheckedForLocation }: MapViewer
     return (
       <div className="w-full h-96 rounded-xl overflow-hidden shadow-lg flex flex-col items-center justify-center bg-gray-100 p-4">
         <h3 className="text-xl font-semibold text-gray-700 mb-2">No location data found</h3>
-        <p className="text-gray-500 text-center">This image doesn't contain GPS coordinates.</p>
+        <p className="text-gray-500 text-center">This image doesn&apos;t contain GPS coordinates.</p>
+
       </div>
     );
   }

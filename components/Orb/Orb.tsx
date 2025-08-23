@@ -175,6 +175,7 @@ export default function Orb({
     }
   `;
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const container = ctnDom.current;
     if (!container) return;
