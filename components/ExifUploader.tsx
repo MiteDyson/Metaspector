@@ -4,14 +4,18 @@
 import { useState } from "react";
 import EXIF from "exif-js";
 import MapViewer from "./MapViewer";
+import Image from "next/image";
 
 interface GpsData {
   lat: number;
   lng: number;
 }
 
+// Type for EXIF metadata (can extend later if needed)
+type ExifMetadata = Record<string, unknown>;
+
 export default function ExifUploader() {
-  const [metadata, setMetadata] = useState<Record<string, any> | null>(null);
+  const [metadata, setMetadata] = useState<ExifMetadata | null>(null);
   const [gps, setGps] = useState<GpsData | null>(null);
   const [preview, setPreview] = useState<string | null>(null);
   const [hasCheckedForLocation, setHasCheckedForLocation] = useState(false);
@@ -25,20 +29,20 @@ export default function ExifUploader() {
 
     const reader = new FileReader();
     reader.onload = (ev) => {
-      const img = new Image();
+      const img = new window.Image();
       img.onload = () => {
-        EXIF.getData(img, function (this: any) {
+        EXIF.getData(img, function (this: HTMLImageElement) {
           const allMeta = EXIF.getAllTags(this);
           setMetadata(allMeta);
 
           if (allMeta.GPSLatitude && allMeta.GPSLongitude) {
             const lat = convertDMSToDD(
-              allMeta.GPSLatitude,
-              allMeta.GPSLatitudeRef
+              allMeta.GPSLatitude as number[],
+              allMeta.GPSLatitudeRef as string
             );
             const lng = convertDMSToDD(
-              allMeta.GPSLongitude,
-              allMeta.GPSLongitudeRef
+              allMeta.GPSLongitude as number[],
+              allMeta.GPSLongitudeRef as string
             );
             setGps({ lat, lng });
           } else {
@@ -64,7 +68,7 @@ export default function ExifUploader() {
     value === undefined || value === null ? "—" : String(value);
 
   // Formatter for shutter speed
-  const formatShutter = (value: any) => {
+  const formatShutter = (value: unknown) => {
     if (!value) return "—";
     if (typeof value === "number") {
       if (value >= 1) return `${value.toFixed(1)}s`;
@@ -91,9 +95,11 @@ export default function ExifUploader() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
           {/* Image Preview */}
           <div className="flex flex-col items-center">
-            <img
+            <Image
               src={preview}
               alt="preview"
+              width={400}
+              height={300}
               className="rounded-lg shadow-lg max-h-96 object-contain"
             />
             <p className="text-sm text-gray-500 mt-2">
@@ -141,14 +147,14 @@ export default function ExifUploader() {
         </div>
       )}
 
-      {/* Map Section - Only show if we've checked for location data */}
+      {/* Map Section */}
       {hasCheckedForLocation && (
         <div className="flex flex-col items-center w-full mt-6 space-y-4">
           <h3 className="font-bold text-lg text-center">🌍 Location</h3>
           <div className="w-full md:w-[800px] h-[400px] rounded-lg overflow-hidden shadow-lg">
-            <MapViewer 
-              lat={gps?.lat || null} 
-              lng={gps?.lng || null} 
+            <MapViewer
+              lat={gps?.lat || null}
+              lng={gps?.lng || null}
               hasCheckedForLocation={hasCheckedForLocation}
             />
           </div>
