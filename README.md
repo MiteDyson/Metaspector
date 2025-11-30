@@ -1,111 +1,155 @@
 
-# 🌌 Image Metadata Inspector
+<div align="center">
+  
+# 🌌 **Metaspector**
 
-> 🔍 A sleek web app to **reveal the hidden story inside your images**.
-> Extract EXIF metadata, visualize geolocation on a map, and enjoy a dynamic, interactive UI.
+</div>
 
----
+<div align="center">
 
-## ✨ Features  
+<img src="https://github.com/MiteDyson/Metaspector/blob/main/Logo.png" width="140" alt="Metaspector Logo">
 
-✅ Upload images and instantly extract metadata <br>  
-✅ Inspect camera details, dimensions, and more <br>  
-✅ Visualize **geo-coordinates on an interactive map** <br>  
-✅ Interactive **shader orb** powered by WebGL <br>  
-✅ Beautiful **background animations** powered by **React Bits** <br>  
-✅ Responsive UI styled with TailwindCSS <br>  
-✅ One-click deployment with **Vercel**  
+### 🔍 *Reveal the hidden story inside your images.*
 
----
+Extract metadata, map geolocation, and visualize stunning shader effects — instantly.
 
-## 🛠️ Tech Stack
+[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?logo=vercel)](https://image-metadata-inspector.vercel.app/)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
+[![Leaflet](https://img.shields.io/badge/Leaflet-1.9-199900?logo=leaflet)](https://leafletjs.com/)
+[![OGL](https://img.shields.io/badge/OGL-WebGL-blueviolet)](https://github.com/oframe/ogl)
+[![Vercel](https://img.shields.io/badge/Vercel-Deploy-black?logo=vercel)](https://vercel.com/)
 
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=next,react,ts,tailwind,vercel,git,github" alt="Tech logos" />
-</p>  
 
-* ⚡ **Next.js 15** – Fast, modern React framework
-* ⚛️ **React Bits** – Smooth background animations & creative effects
-* 🎨 **TailwindCSS** – Utility-first styling
-* 🌐 **OGL (WebGL)** – Custom shader orb animation
-* 🗺️ **Leaflet.js** – Interactive maps for GPS data
-* ☁️ **Vercel** – Zero-config hosting & CI/CD
+</div>
 
 ---
 
+## ✨ **Features**
 
-## 📂 Project Structure
+### 🖼 Metadata Extraction
 
-Here’s a high-level overview of the codebase:
+* Upload any image and instantly view its **EXIF metadata**
+* Inspect camera data, resolution, DPI, ISO, timestamp, and more
+
+### 🗺 Geolocation Mapping
+
+* Automatically detect GPS-based EXIF tags
+* Display coordinates on a **Leaflet-powered interactive map**
+
+### 🌐 Shader Orb Animation
+
+* Smooth, WebGL-based **shader orb** built with **OGL**
+* Adds a premium, futuristic feel to the UI
+
+### 🎨 Enhanced UI & Effects
+
+* Dynamic background animations via **React Bits**
+* Clean, minimal interface powered by **TailwindCSS**
+* Fully responsive on all devices
+
+### 🚀 Deployment-Ready
+
+* Zero-config deployment with **Vercel**
+* Perfect lighthouse performance and instant cold starts
+
+---
+
+## 🛠️ **Tech Stack**
+
+
+
+| Technology      | Purpose                               |
+| --------------- | ------------------------------------- |
+| **Next.js 15**  | App framework for routing & UI        |
+| **React 19**    | Rendering & interactive components    |
+| **TypeScript**  | Types & strong tooling                |
+| **TailwindCSS** | Utility-first design for fast styling |
+| **React Bits**  | Animated backgrounds                  |
+| **OGL (WebGL)** | Custom shader orb visual              |
+| **Leaflet.js**  | GPS map rendering                     |
+| **Vercel**      | Hosting & CI/CD                       |
+
+---
+
+## 📂 **Project Structure**
 
 ```bash
-Image-Metadata-Inspector/
-│── components/           # Reusable UI components
-│   ├── ExifUploader.tsx  # Upload & extract EXIF metadata
-│   ├── MapViewer.tsx     # Display GPS location on interactive map
-│   └── Orb/              # WebGL shader orb animation
+Metaspector/
+│── components/              # Reusable UI components
+│   ├── ExifUploader.tsx     # Handles image upload & EXIF parsing
+│   ├── ExifViewer.tsx       # Displays extracted metadata
+│   ├── MapViewer.tsx        # Renders location using Leaflet
+│   └── Orb/                 # WebGL shader orb animation
 │
-│── pages/                # Next.js app routes
-│   ├── index.tsx         # Main app entry
-│   └── _app.tsx          # Global app wrapper
+│── pages/
+│   ├── index.tsx            # Main application UI
+│   └── _app.tsx             # Global layout & styles
 │
-│── public/               # Static assets (icons, images, etc.)
-│── styles/               # Global styles (Tailwind base)
-│── package.json          # Project metadata & dependencies
-│── tsconfig.json         # TypeScript config
-│── next.config.js        # Next.js configuration
-│── README.md             # You’re here 🚀
+│── public/                  # Static assets (icons, logos)
+│── styles/                  # Global Tailwind styles
+│── utils/                   # EXIF parsing logic & helpers
+│── package.json
+│── next.config.js
+│── tsconfig.json
+│── README.md
 ```
 
 ---
 
+## 🖼️ **Sample Images for Testing**
 
-## 🖼️ Sample Images
+You can test EXIF metadata extraction using the open-source **EXIF Samples Repository**:
+[Here](https://github.com/ianare/exif-samples)
 
-Want to test the app with real-world examples?
-Use the excellent open-source **[EXIF Samples Repository](https://github.com/ianare/exif-samples)** maintained by @ianare.
-
-It provides images with embedded EXIF metadata, perfect for experimenting with camera data, GPS tags, and more.
+Contains clean samples with camera data, GPS tags, and other metadata.
 
 ---
 
-## 🚀 Getting Started
+## 🚀 **Getting Started**
 
-Clone the repo and start hacking:
+Clone and run locally:
 
 ```bash
-# Clone repo
-git clone https://github.com/MiteDyson/Image-Metadata-Inspector.git
+# Clone
+git clone https://github.com/MiteDyson/Metaspector.git
 
-# Enter project folder
-cd Image-Metadata-Inspector
+# Enter folder
+cd Metaspector
 
-# Install dependencies
+# Install deps
 npm install
 
-# Start dev server
+# Run dev server
 npm run dev
 ```
 
-👉 Now visit **[http://localhost:3000](http://localhost:3000)**
+Now visit → **[http://localhost:3000](http://localhost:3000)**
 
 ---
 
-## 🚢 Deployment
+## 🚢 **Deploy to Production**
 
 Deploy instantly with **Vercel**:
 
-1. Push your repo to GitHub
-2. Connect it to [Vercel](https://vercel.com/)
-3. Deploy with 1-click 🚀
+1. Push the repo to GitHub
+2. Import your project into Vercel
+3. Deploy with a single click
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/MiteDyson/Image-Metadata-Inspector)
 
+---
+## 🌟 **Live Demo** : [Here](https://image-metadata-inspector.vercel.app/)
 ---
 
 
-🌟 *If you like this project, don’t forget to star ⭐ the repo!*
+<div align="center">
+
+### 💫 *Metaspector — Because every image has a story.*
+
+If you found this useful, please ⭐ the repo!
+
+</div>
 
 ---
-
-
